@@ -3,6 +3,7 @@ package org.jeecg;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.Context;
 import org.apache.tomcat.util.scan.StandardJarScanner;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,6 +18,7 @@ import java.net.UnknownHostException;
 
 @Slf4j
 @EnableSwagger2
+@MapperScan("org.jeecg.modules.exam.mapper")
 @SpringBootApplication
 public class JeecgApplication {
     public static void main(String[] args) throws UnknownHostException {
