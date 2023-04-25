@@ -15,4 +15,6 @@ import org.jeecg.modules.teaching.model.SubjectLevelList;
 public interface SubjectLevelListService extends IService<SubjectLevelList> {
 
     String getExamList(String id, String type, String token, int index);
+
+    String getExamLists(String dirt);
 }

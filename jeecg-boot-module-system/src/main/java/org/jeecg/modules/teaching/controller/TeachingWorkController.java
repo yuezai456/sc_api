@@ -55,7 +55,7 @@ import static org.jeecg.common.util.oConvertUtils.isNotEmpty;
 
 /**
  * @Description: 作业列表
- * @Author: jeecg-boot
+ * @Author: Fitz
  * @Date:   2020-04-12
  * @Version: V1.0
  */

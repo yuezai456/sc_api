@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * @Description: 课程
- * @Author: jeecg-boot
+ * @Author: Fitz
  * @Date:   2020-04-14
  * @Version: V1.0
  */

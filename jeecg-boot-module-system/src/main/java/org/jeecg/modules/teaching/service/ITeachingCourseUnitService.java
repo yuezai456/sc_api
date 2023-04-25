@@ -10,7 +10,7 @@ import org.jeecg.modules.teaching.model.CourseUnitWorkModel;
 
 /**
  * @Description: 课程单元
- * @Author: jeecg-boot
+ * @Author: Fitz
  * @Date:   2020-04-14
  * @Version: V1.0
  */

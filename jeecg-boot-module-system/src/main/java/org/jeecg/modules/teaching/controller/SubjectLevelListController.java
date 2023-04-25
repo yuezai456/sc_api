@@ -19,16 +19,21 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/subject-level-list")
+@RequestMapping("/subject")
 
 public class SubjectLevelListController {
     @Autowired
     SubjectLevelListService subjectLevelListService;
-    @GetMapping("getexamlist")
-    public String getExamList(@RequestParam("id") String id,@RequestParam("type") String type,@RequestParam("index") int index){
+    @GetMapping("getexamdata")
+    public String getExamData(@RequestParam("id") String id,@RequestParam("type") String type,@RequestParam("index") int index){
         String token="jwt_eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3NTYzMDJhOS1jZGUwLTRlODItOTZhMS1kZWFjYTg5NGM3MzAiLCJpYXQiOjE2Nzg4Nzg1NzIsInN1YiI6IjE4NjI2MzAxMTEyLTI2MDMyNjAzIn0.ySO-yofIzK4sGev5-NWECq2TtkGA14Xaq9UpPNEqeI0";
         System.out.println(token);
         return subjectLevelListService.getExamList(id,type,token,index);
+    }
+    @GetMapping("getexamlist")
+    public String getExamList(@RequestParam("dirt") String dirt){
+
+        return subjectLevelListService.getExamLists(dirt);
     }
 }
 

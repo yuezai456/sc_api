@@ -35,7 +35,7 @@ public class SubjectExamTypeServiceImpl extends ServiceImpl<SubjectExamTypeMappe
             Map next = (Map) listIterator.next();
             subjectExamType.setId((Integer) next.get("id"));
             subjectExamType.setSubjectId((Integer) next.get("subjectId"));
-            subjectExamType.setExamtime((Integer) next.get("examTime"));
+            subjectExamType.setExamTime((Integer) next.get("examTime"));
             subjectExamType.setPreviousExamname((String) next.get("title"));
             subjectExamType.setExamType((String) next.get("title"));
             try {

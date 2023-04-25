@@ -3,9 +3,11 @@ package org.jeecg.modules.teaching.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
 import org.jeecg.modules.teaching.mapper.SubjectLevelListMapper;
+import org.jeecg.modules.teaching.model.ExamData;
 import org.jeecg.modules.teaching.model.SubjectExamType;
 import org.jeecg.modules.teaching.model.SubjectLevelList;
 import org.jeecg.modules.teaching.service.SubjectExamTypeService;
@@ -14,6 +16,7 @@ import org.jeecg.modules.teaching.utils.HttpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -64,5 +67,34 @@ public class SubjectLevelListServiceImpl extends ServiceImpl<SubjectLevelListMap
 //            throw new RuntimeException(e);
         }
         return String.valueOf(subjectLevelList);
+    }
+
+    @Override
+    public String getExamLists(String dirt) {
+        String title="202009Python一级真题";
+        List<SubjectLevelList> subjectLevelLists = baseMapper.selectList(new QueryWrapper<>());
+        System.out.println(subjectLevelLists);
+        ExamData examData=new ExamData();
+        List<String[]> list = new ArrayList<>();
+        List<String> examInfo=new ArrayList<>();
+        //添加日期
+        String date=title.substring(0,6);
+        examInfo.add(date);
+        //添加编程语言类型
+        list.add(examData.getProgramTypes());
+        //添加编程语言等级
+        list.add(examData.getLevelTypes());
+        //添加考试类型
+        list.add(examData.getExamTypes());
+        for(int i= 0;i<list.size();i++){
+
+            for(int j=0;j<list.get(i).length;j++){
+                if(title.contains(list.get(i)[j])){
+                    examInfo.add(list.get(i)[j]);
+                }
+            }
+
+        }
+        return date;
     }
 }

@@ -12,7 +12,7 @@ import org.jeecg.modules.teaching.model.StudentWorkModel;
 
 /**
  * @Description: 作业列表
- * @Author: jeecg-boot
+ * @Author: Fitz
  * @Date:   2020-04-12
  * @Version: V1.0
  */

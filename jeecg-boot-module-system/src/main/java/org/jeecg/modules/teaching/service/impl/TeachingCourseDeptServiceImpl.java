@@ -13,7 +13,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
 /**
  * @Description: 班级课程表
- * @Author: jeecg-boot
+ * @Author: Fitz
  * @Date:   2020-04-14
  * @Version: V1.0
  */

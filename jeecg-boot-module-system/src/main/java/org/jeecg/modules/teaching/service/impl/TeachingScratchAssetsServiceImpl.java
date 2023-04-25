@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * @Description: Scratch素材库
- * @Author: jeecg-boot
+ * @Author: Fitz
  * @Date:   2021-09-18
  * @Version: V1.0
  */

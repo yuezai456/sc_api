@@ -17,7 +17,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * @Description: 部门角色人员信息
- * @Author: jeecg-boot
+ * @Author: Fitz
  * @Date:   2020-02-13
  * @Version: V1.0
  */

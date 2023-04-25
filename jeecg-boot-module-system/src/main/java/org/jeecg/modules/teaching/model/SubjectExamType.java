@@ -33,8 +33,13 @@ public class SubjectExamType implements Serializable {
 
     private String previousExamname;
 
-    @TableField("examTime")
-    private Integer examtime;
+
+    private Integer examTime;
+
+    private String programType;
+    private String levelType;
+
+    private String date;
 
     @TableLogic
     private Integer isDeleted;

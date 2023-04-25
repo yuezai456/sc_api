@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 /**
  * @Description: 租户配置
- * @Author: jeecg-boot
+ * @Author: Fitz
  * @Date:   2020-12-25
  * @Version: V1.0
  */

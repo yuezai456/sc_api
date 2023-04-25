@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.teaching.mapper.SubjectLevelListMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.jeecg.modules.teaching.model.SubjectLevelList">
+        <id column="id" property="id" />
+        <result column="question_id" property="questionId" />
+        <result column="previous_examTime" property="previousExamtime" />
+        <result column="previous_examName" property="previousExamname" />
+        <result column="create_user" property="createUser" />
+        <result column="create_time" property="createTime" />
+        <result column="is_deleted" property="isDeleted" />
+        <result column="update_user" property="updateUser" />
+        <result column="update_time" property="updateTime" />
+        <result column="version" property="version" />
+        <result column="type" property="type" />
+        <result column="title" property="title" />
+        <result column="option_a" property="optionA" />
+        <result column="option_b" property="optionB" />
+        <result column="option_c" property="optionC" />
+        <result column="option_d" property="optionD" />
+        <result column="option_e" property="optionE" />
+        <result column="answer" property="answer" />
+        <result column="user_answer" property="userAnswer" />
+        <result column="analyze_content" property="analyzeContent" />
+        <result column="analyze_video" property="analyzeVideo" />
+        <result column="subject_id" property="subjectId" />
+        <result column="exam_dots" property="examDots" />
+        <result column="sprint_id" property="sprintId" />
+        <result column="subject_number" property="subjectNumber" />
+        <result column="images" property="images" />
+        <result column="we_type" property="weType" />
+        <result column="wx_answer_type" property="wxAnswerType" />
+        <result column="is_my_subject" property="isMySubject" />
+        <result column="is_delete" property="isDelete" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, previous_examTime, previous_examName, create_user, create_time, is_deleted, update_user, update_time, version, type, title, option_a, option_b, option_c, option_d, option_e, answer, user_answer, analyze_content, analyze_video, subject_id, exam_dots, sprint_id, subject_number, images, we_type, wx_answer_type, is_my_subject, is_delete
+    </sql>
+
+</mapper>

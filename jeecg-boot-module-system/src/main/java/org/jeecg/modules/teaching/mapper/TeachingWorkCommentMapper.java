@@ -8,7 +8,7 @@ import org.jeecg.modules.teaching.model.WorkCommentModel;
 
 /**
  * @Description: 作品评论
- * @Author: jeecg-boot
+ * @Author: Fitz
  * @Date:   2020-04-12
  * @Version: V1.0
  */

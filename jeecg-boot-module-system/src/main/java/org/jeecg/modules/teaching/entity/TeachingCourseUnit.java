@@ -18,7 +18,7 @@ import lombok.experimental.Accessors;
 
 /**
  * @Description: 课程单元
- * @Author: jeecg-boot
+ * @Author: Fitz
  * @Date:   2020-04-14
  * @Version: V1.0
  */
