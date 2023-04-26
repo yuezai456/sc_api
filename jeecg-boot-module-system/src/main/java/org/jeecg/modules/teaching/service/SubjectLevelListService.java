@@ -4,6 +4,8 @@ package org.jeecg.modules.teaching.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.jeecg.modules.teaching.model.SubjectLevelList;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -17,4 +19,6 @@ public interface SubjectLevelListService extends IService<SubjectLevelList> {
     String getExamList(String id, String type, String token, int index);
 
     String getExamLists(String dirt);
+
+    List<SubjectLevelList> getExam(String previousExamName);
 }

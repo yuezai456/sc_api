@@ -73,7 +73,6 @@ public class SubjectLevelListServiceImpl extends ServiceImpl<SubjectLevelListMap
     public String getExamLists(String dirt) {
         String title="202009Python一级真题";
         List<SubjectLevelList> subjectLevelLists = baseMapper.selectList(new QueryWrapper<>());
-        System.out.println(subjectLevelLists);
         ExamData examData=new ExamData();
         List<String[]> list = new ArrayList<>();
         List<String> examInfo=new ArrayList<>();
@@ -96,5 +95,16 @@ public class SubjectLevelListServiceImpl extends ServiceImpl<SubjectLevelListMap
 
         }
         return date;
+    }
+
+    @Override
+    public List<SubjectLevelList> getExam(String previousExamName) {
+        QueryWrapper queryWrapper=new QueryWrapper();
+        //通过试卷名查询
+        queryWrapper.eq("previous_examName",previousExamName);
+        //正序排列
+        queryWrapper.orderByAsc("id");
+        List list = baseMapper.selectList(queryWrapper);
+        return list;
     }
 }
