@@ -13,9 +13,7 @@ import org.jeecg.modules.teaching.service.SubjectLevelListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * <p>
@@ -88,8 +86,29 @@ public class SubjectLevelListController {
     }
 
     @GetMapping("getexam")
-    public List<SubjectLevelList> getExam(@RequestParam("previousExamName") String previousExamName){
-        return subjectLevelListService.getExam(previousExamName);
+    public Map<Object,Object> getExam(@RequestParam("previousExamName") String previousExamName){
+        Map<Object,Object> result=new HashMap<>();
+        List list=new ArrayList();
+        for (SubjectLevelList subjectLevelList : subjectLevelListService.getExam(previousExamName)) {
+
+            result.put("title",subjectLevelList.getPreviousExamname());
+            result.put("description",subjectLevelList.getCreateTime());
+            Map<Object,Object>  map=new HashMap<>();
+            map.put("text",subjectLevelList.getTitle());
+            Map<Object,String>  options=new HashMap<>();
+            options.put("optionA",subjectLevelList.getOptionA());
+            options.put("optionB",subjectLevelList.getOptionB());
+            options.put("optionC",subjectLevelList.getOptionC());
+            options.put("optionD",subjectLevelList.getOptionD());
+            map.put("options",options);
+            map.put("answer",subjectLevelList.getAnswer());
+            list.add(map);
+            result.put("questions",list);
+
+        }
+        System.out.println(result);
+
+        return result;
     }
 }
 
