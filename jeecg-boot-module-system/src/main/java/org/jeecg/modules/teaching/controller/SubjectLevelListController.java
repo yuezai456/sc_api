@@ -95,11 +95,11 @@ public class SubjectLevelListController {
             result.put("description",subjectLevelList.getCreateTime());
             Map<Object,Object>  map=new HashMap<>();
             map.put("text",subjectLevelList.getTitle());
-            Map<Object,String>  options=new HashMap<>();
-            options.put("optionA",subjectLevelList.getOptionA());
-            options.put("optionB",subjectLevelList.getOptionB());
-            options.put("optionC",subjectLevelList.getOptionC());
-            options.put("optionD",subjectLevelList.getOptionD());
+            Map<Object,String>  options=new LinkedHashMap<>();
+            options.put("A",subjectLevelList.getOptionA());
+            options.put("B",subjectLevelList.getOptionB());
+            options.put("C",subjectLevelList.getOptionC());
+            options.put("D",subjectLevelList.getOptionD());
             map.put("options",options);
             map.put("answer",subjectLevelList.getAnswer());
             list.add(map);
