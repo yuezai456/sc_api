@@ -107,4 +107,13 @@ public class SubjectLevelListServiceImpl extends ServiceImpl<SubjectLevelListMap
         List list = baseMapper.selectList(queryWrapper);
         return list;
     }
+
+    @Override
+    public Boolean addExam(SubjectLevelList examData) {
+        int insert = baseMapper.insert(examData);
+        if(insert==1){
+            return true;
+        }
+        return false;
+    }
 }

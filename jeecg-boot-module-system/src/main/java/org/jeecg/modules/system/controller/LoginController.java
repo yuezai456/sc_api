@@ -84,17 +84,18 @@ public class LoginController {
 
 		//update-begin-author:taoyan date:20190828 for:校验验证码
         String captcha = sysLoginModel.getCaptcha();
-        if(captcha==null){
-            result.error500("验证码无效");
-            return result;
-        }
+		//暂时不需要验证码
+//        if(captcha==null){
+//            result.error500("验证码无效");
+//            return result;
+//        }
         String lowerCaseCaptcha = captcha.toLowerCase();
 		String realKey = MD5Util.MD5Encode(lowerCaseCaptcha+sysLoginModel.getCheckKey(), "utf-8");
 		Object checkCode = redisUtil.get(realKey);
-		if(checkCode==null || !checkCode.equals(lowerCaseCaptcha)) {
-			result.error500("验证码错误");
-			return result;
-		}
+//		if(checkCode==null || !checkCode.equals(lowerCaseCaptcha)) {
+//			result.error500("验证码错误");
+//			return result;
+//		}
 		//update-end-author:taoyan date:20190828 for:校验验证码
 		
 		//1. 校验用户是否有效
@@ -505,7 +506,8 @@ public class LoginController {
 		String realKey = MD5Util.MD5Encode(lowerCaseCaptcha+checkKey, "utf-8");
 		Object checkCode = redisUtil.get(realKey);
 		if(checkCode==null || !checkCode.equals(lowerCaseCaptcha)) {
-			return Result.error("验证码错误");
+//			return Result.error("验证码错误");暂时不需要验证码
+			return Result.ok();
 		}
 		return Result.ok();
 	}

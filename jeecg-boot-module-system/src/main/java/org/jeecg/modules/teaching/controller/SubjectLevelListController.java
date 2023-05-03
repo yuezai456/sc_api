@@ -102,13 +102,21 @@ public class SubjectLevelListController {
             options.put("D",subjectLevelList.getOptionD());
             map.put("options",options);
             map.put("answer",subjectLevelList.getAnswer());
+            map.put("analyze",subjectLevelList.getAnalyzeContent());
             list.add(map);
             result.put("questions",list);
-
         }
         System.out.println(result);
-
         return result;
+    }
+    @PostMapping("addexam")
+    public Map<Object,Object> addExam(
+            @RequestBody(required = false) List<SubjectLevelList> examData){
+        Iterator<SubjectLevelList> iterator = examData.iterator();
+        while(iterator.hasNext()){
+            subjectLevelListService.addExam(iterator.next());
+        }
+        return null;
     }
 }
 
